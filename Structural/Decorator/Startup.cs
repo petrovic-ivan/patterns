@@ -6,12 +6,12 @@ namespace Decorator
     {
         public static  T ConfigureEntryPoint<T>()
         {
-            //setup our DI
-        var serviceProvider = new ServiceCollection()
-            .AddSingleton<IComponent, Component>()
-            .Decorate<IComponent, Decorator>()
-            .AddSingleton<IClient, Client>()
-            .BuildServiceProvider();
+
+            var serviceProvider = new ServiceCollection()
+                .AddSingleton<IComponent, Component>()
+                .Decorate<IComponent, Decorator>()
+                .AddSingleton<IClient, Client>()
+                .BuildServiceProvider();
 
             var entryPoint = serviceProvider.GetService<T>();
             return entryPoint;
