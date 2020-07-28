@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Structural.Comp
 {
-    public class Composite<T> : IComponent<T>, IIterator<T>
+    public class Composite<T> : IComponent<T>, IIterator
     {
         private readonly List<IComponent<T>> _list;
 
@@ -61,7 +61,7 @@ namespace Structural.Comp
             foreach (var item in ((Composite<T>)c)._list)
             {
                 Console.WriteLine(tab + item.Id);
-                if (item is IIterator<T>)
+                if (item is IIterator)
                 {
                     tab += "\t";
                     DisplayAll(item, tab);

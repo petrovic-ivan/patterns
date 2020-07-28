@@ -29,7 +29,7 @@ namespace Structural.Comp
             group3.Add(leaf7);
             group3.Add(group2);
 
-            ((IIterator<string>)group3).DisplayAll();
+            ((IIterator)group3).DisplayAll();
         }
     }
 }
